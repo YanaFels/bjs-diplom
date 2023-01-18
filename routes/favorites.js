@@ -34,7 +34,7 @@ router.post('/add', (request, response) => {
   }
 
   if (id === '' || name === '') {
-    response.json({ success: false, error: 'Поля для ввода должны быть заполенны' });
+    response.json({ success: false, error: 'Поля для ввода должны быть заполнены' });
     return;
   }
 
