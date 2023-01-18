@@ -75,9 +75,9 @@ favorite.addUserCallback = addUser => ApiConnector.addUserToFavorites(addUser, r
         favorite.clearTable();
         favorite.fillTable(response.data);
         manager.updateUsersList(response.data);
-        return manager.setMessage(true, 'Успешно добавлен новый пользователь: ' + addUser.name);
+        return favorite.setMessage(true, 'Успешно добавлен новый пользователь: ' + addUser.name);
     }
-    return manager.setMessage(false, 'Ошибка: ' + response.error);
+    return favorite.setMessage(false, 'Ошибка: ' + response.error);
 });
 
 //Удаление пользователя из списка избранных
@@ -86,7 +86,7 @@ favorite.removeUserCallback = removeUser => ApiConnector.removeUserFromFavorites
         favorite.clearTable();
         favorite.fillTable(response.data);
         manager.updateUsersList(response.data);
-        return manager.setMessage(true, 'Успешно удален пользователь: ' + removeUser);
+        return favorite.setMessage(true, 'Успешно удален пользователь: ' + removeUser);
     }
-    return manager.setMessage(false, 'Ошибка: ' + response.error);
+    return favorite.setMessage(false, 'Ошибка: ' + response.error);
 });
